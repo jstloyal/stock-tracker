@@ -2,22 +2,11 @@
 
 The is a financial tracking app
 
-Things you may want to cover:
+Task: Design and add Stock Model
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization: Postgresql
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Attributes name, ticker_symbol and price
+- Automate looking up stock (currently only possible through rails console)
+- Automate API key insertion (instead of having to key it in everytime we look up stock)
+  - We will be using secure credentials in Rails apps:
+    credentials.yml.enc (ecrypted file)
+    master,key (key to decrypt credentials file)
