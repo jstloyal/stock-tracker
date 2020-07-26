@@ -7,5 +7,7 @@
     <strong>Symbol: </strong><%= @my_stock.ticker %>
     <strong>Name: </strong><%= @my_stock.name %>
     <strong>Price($): </strong><%= @my_stock.last_price %>
+    <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @my_stock.ticker),
+                                    class: 'btn btn-xs btn-success', method: :post %>
   </div>
 <% end %>
