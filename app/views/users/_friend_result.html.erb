@@ -1,0 +1,23 @@
+<div class="results-block">
+  <%= render 'layouts/messages' %>
+</div>
+
+<% if @friends %>
+  <div class="card card-header result-block">
+    <table class="col-md-12">
+      <tbody>
+        <% @friends.each do |friend| %>
+          <tr>
+            <td><strong>Name: </strong> <%= friend.full_name %></td>
+            <td><strong>Email: </strong> <%= friend.email %></td>
+            <td><strong>Actions: </strong> <%= link_to 'View Prfile', '#', 
+                                                class: "btn btn-sm btn-success" %>
+                <%= link_to 'Follow friend?', '#',
+                                    class: "btn btn-sm btn-success", method: :post %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
