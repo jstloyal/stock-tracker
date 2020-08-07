@@ -8,7 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  def tracked_stock(ticker_symbol)
+  def tracked_stock?(ticker_symbol)
     stock = Stock.check_db(ticker_symbol)
     return false unless stock
     stocks.where(id: stock.id).exists?
@@ -25,6 +25,10 @@ class User < ApplicationRecord
   def full_name
     return "#{first_name} #{last_name}" if first_name || last_name
     "Anonymous"
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   def self.search(param)
